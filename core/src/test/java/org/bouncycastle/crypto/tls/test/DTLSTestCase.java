@@ -11,7 +11,8 @@ import org.bouncycastle.crypto.tls.DatagramTransport;
 import org.bouncycastle.crypto.tls.ProtocolVersion;
 import org.bouncycastle.util.Arrays;
 
-public class DTLSTestCase extends TestCase
+// Non-public class to stop JUnit attempting to execute this TestCase in isolation
+class DTLSTestCase extends TestCase
 {
     private static void checkDTLSVersion(ProtocolVersion version)
     {
