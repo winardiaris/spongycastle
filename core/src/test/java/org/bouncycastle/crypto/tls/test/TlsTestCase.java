@@ -13,7 +13,7 @@ import org.bouncycastle.crypto.tls.TlsServerProtocol;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.io.Streams;
 
-public class TlsTestCase extends TestCase
+class TlsTestCase extends TestCase
 {
     private static void checkTLSVersion(ProtocolVersion version)
     {
