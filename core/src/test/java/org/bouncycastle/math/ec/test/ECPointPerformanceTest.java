@@ -21,7 +21,7 @@ import org.bouncycastle.util.Times;
  * Compares the performance of the the window NAF point multiplication against conventional point
  * multiplication.
  */
-public class ECPointPerformanceTest extends TestCase
+public class ECPointPerformanceTest // Disable test no longer extends TestCase
 {
     static final int MILLIS_PER_ROUND = 200;
     static final int MILLIS_WARMUP = 1000;
