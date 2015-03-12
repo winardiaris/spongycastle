@@ -4,13 +4,13 @@
     
 find -name bouncycastle | xargs rename s/bouncycastle/spongycastle/
 
-find {core,jce,prov,pg,pkix} -type f | xargs ssed -i -R 's/bouncycastle(?!.org)/spongycastle/g'
+find {core,jce,prov,pg,pkix} -type f | xargs -I '{}' ssed -i -R 's/bouncycastle(?!.org)/spongycastle/g' '{}'
 
 # find bc* -type f | xargs sed -i s/bouncycastle/spongycastle/g
 
 # BC to SC for provider name
     
-find {core,jce,prov,pg,pkix} -type f | xargs sed -i s/\"BC\"/\"SC\"/g
+find {core,jce,prov,pg,pkix} -type f | xargs -I '{}' sed -i s/\"BC\"/\"SC\"/g '{}'
 
 # Rename 'bc' artifacts to 'sc'
     
