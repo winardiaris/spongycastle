@@ -26,7 +26,6 @@ public class AllTests
         
         suite.addTestSuite(RainbowSignatureTest.class);
         suite.addTestSuite(McElieceFujisakiCipherTest.class);
-        suite.addTestSuite(McElieceKobaraImaiCipherTest.class);
         suite.addTestSuite(McEliecePointchevalCipherTest.class);
         suite.addTestSuite(McEliecePKCSCipherTest.class);
 
