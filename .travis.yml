@@ -2,6 +2,7 @@ language: java
 
 jdk:
   - openjdk7
+  - openjdk8
 
 sudo: false
 
@@ -9,7 +10,7 @@ install:
   - TERM=dumb gradle assemble
 
 script:
-  - TERM=dumb gradle check --debug
+  - TERM=dumb gradle check
 
 notifications:
   email:
