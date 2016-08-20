@@ -9,7 +9,7 @@ install:
   - TERM=dumb gradle assemble testClasses
 
 script:
-  - TERM=dumb gradle check
+  - TERM=dumb gradle check --debug
 
 notifications:
   email:
