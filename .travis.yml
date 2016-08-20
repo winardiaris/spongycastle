@@ -2,12 +2,11 @@ language: java
 
 jdk:
   - openjdk7
-  - openjdk8
 
 sudo: false
 
 install:
-  - TERM=dumb gradle assemble
+  - TERM=dumb gradle assemble testClasses
 
 script:
   - TERM=dumb gradle check
