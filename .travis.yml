@@ -9,7 +9,7 @@ install:
   - TERM=dumb gradle assemble
 
 script:
-  - TERM=dumb gradle check --debug
+  - TERM=dumb gradle check --info
 
 notifications:
   email:
