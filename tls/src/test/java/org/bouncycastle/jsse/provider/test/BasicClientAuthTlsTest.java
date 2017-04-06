@@ -8,6 +8,7 @@ import java.security.SecureRandom;
 import java.security.Security;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -22,6 +23,8 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.jsse.provider.BouncyCastleJsseProvider;
 
 import junit.framework.TestCase;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class BasicClientAuthTlsTest
     extends TestCase
@@ -66,6 +69,7 @@ public class BasicClientAuthTlsTest
         public Object call()
             throws Exception
         {
+            System.out.println("xxxALP");
             TrustManagerFactory trustMgrFact = TrustManagerFactory.getInstance("X509",
                 BouncyCastleJsseProvider.PROVIDER_NAME);
 
@@ -91,6 +95,8 @@ public class BasicClientAuthTlsTest
             assertEquals("CN=Test CA Certificate", session.getLocalPrincipal().getName());
             assertEquals("CN=Test CA Certificate", session.getPeerPrincipal().getName());
 
+            System.out.println("xxxBETA");
+
             TestProtocolUtil.doClientProtocol(cSock, "Hello");
 
             latch.countDown();
@@ -101,7 +107,8 @@ public class BasicClientAuthTlsTest
         public void await()
             throws InterruptedException
         {
-            latch.await();
+            if (!latch.await(30, SECONDS))
+                fail("Timeout!");
         }
     }
 
@@ -171,7 +178,7 @@ public class BasicClientAuthTlsTest
         public void await()
             throws InterruptedException
         {
-            latch.await();
+            if (!latch.await(30, SECONDS)) fail("Timeout!");
         }
     }
 

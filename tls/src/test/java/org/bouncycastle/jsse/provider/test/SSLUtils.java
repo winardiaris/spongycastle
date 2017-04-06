@@ -1,5 +1,7 @@
 package org.bouncycastle.jsse.provider.test;
 
+import org.junit.Assert;
+
 import java.security.KeyStore;
 import java.security.Security;
 import java.util.ArrayList;
@@ -11,6 +13,9 @@ import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.TrustManagerFactory;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.junit.Assert.fail;
 
 class SSLUtils
 {
@@ -113,7 +118,7 @@ class SSLUtils
 
         try
         {
-            latch.await();
+            if (!latch.await(30, SECONDS)) fail("Timeout!");
         }
         catch (InterruptedException e)
         {
