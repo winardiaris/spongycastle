@@ -19,6 +19,8 @@ import junit.framework.TestCase;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.jsse.provider.BouncyCastleJsseProvider;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 public class BasicTlsTest
     extends TestCase
 {
@@ -77,7 +79,7 @@ public class BasicTlsTest
         public void await()
             throws InterruptedException
         {
-            latch.await();
+            if (!latch.await(30, SECONDS)) fail("Timeout!");
         }
     }
 
@@ -126,7 +128,7 @@ public class BasicTlsTest
         public void await()
             throws InterruptedException
         {
-            latch.await();
+            if (!latch.await(30, SECONDS)) fail("Timeout!");
         }
     }
 
