@@ -19,8 +19,8 @@ public class AllTests
     {
         TestSuite suite = new TestSuite("JSSE tests");
 
-        suite.addTestSuite(BasicClientAuthTlsTest.class);
-        suite.addTestSuite(BasicTlsTest.class);
+        // suite.addTestSuite(BasicClientAuthTlsTest.class);
+        // suite.addTestSuite(BasicTlsTest.class);
         suite.addTestSuite(ConfigTest.class);
         suite.addTestSuite(InstanceTest.class);
         suite.addTestSuite(KeyManagerFactoryTest.class);
