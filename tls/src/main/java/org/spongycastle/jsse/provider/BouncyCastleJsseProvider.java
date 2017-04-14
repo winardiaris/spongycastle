@@ -19,7 +19,7 @@ public class BouncyCastleJsseProvider
 {
     private static String info = "Bouncy Castle JSSE Provider Beta Version";
 
-    public static final String PROVIDER_NAME = "BCJSSE";
+    public static final String PROVIDER_NAME = "SCJSSE";
 
     private static final double version = 0.9;
     
