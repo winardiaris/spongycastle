@@ -18,7 +18,7 @@ import org.spongycastle.util.Strings;
 public class BouncyCastleJsseProvider
     extends Provider
 {
-    public static final String PROVIDER_NAME = "BCJSSE";
+    public static final String PROVIDER_NAME = "SCJSSE";
 
     private static final double PROVIDER_VERSION = 1.0;
     private static final String PROVIDER_INFO = "Bouncy Castle JSSE Provider Version 1.0.0";
