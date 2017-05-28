@@ -16,4 +16,4 @@ pg/*.bpg
 pg/*.txt
 
 .idea
-
+*.iml
