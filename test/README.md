@@ -3,7 +3,7 @@
 
 ##EST Tests
 
-The EST tests in ```src/test/java/org/bouncycastle/test/est``` programmatically start and stop
+The EST tests in ```src/test/java/org/spongycastle/test/est``` programmatically start and stop
 an EST server instance via a native plugin. 
 
 To download and build that plugin please see:
